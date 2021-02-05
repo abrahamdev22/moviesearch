@@ -32,7 +32,7 @@ searchButton.addEventListener('click',async function () {    //beri event pada e
 //coba error handling
 
 function getMoviesData(keyword) {   
-    return fetch('http://www.omdbapi.com/?apikey=dfc21549&s=' + keyword)  //pake return karena hasilnya akan dipake di function berikutnya
+    return fetch('https://www.omdbapi.com/?apikey=dfc21549&s=' + keyword)  //pake return karena hasilnya akan dipake di function berikutnya
     .then(response => {
         if(!response.ok){
            throw new Error(response.statusText);     
@@ -82,7 +82,7 @@ function tampilkanDetail(movDetail) {
 
 
 function getMovieDetails(imdbid) {
-    return fetch('http://www.omdbapi.com/?apikey=dfc21549&i=' + imdbid) 
+    return fetch('https://www.omdbapi.com/?apikey=dfc21549&i=' + imdbid) 
         .then(response => response.json()) //hasil dari method json adalah promise
         .then(response => response);
 }
